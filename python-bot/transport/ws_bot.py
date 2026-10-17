@@ -249,7 +249,8 @@ class WSAPI:
         response = requests.patch(url, headers=self.session.get_headers())
         
         if response.status_code in [200, 204]:
-            self.session.conversation_id = return True
+            self.session.conversation_id = None
+            return True
         return False
     
     def get_my_profile(self) -> dict:
